@@ -35,19 +35,19 @@
             // 
             this.SpieleListBox.FormattingEnabled = true;
             this.SpieleListBox.ItemHeight = 20;
-            this.SpieleListBox.Location = new System.Drawing.Point(37, 133);
+            this.SpieleListBox.Location = new System.Drawing.Point(12, 40);
             this.SpieleListBox.Name = "SpieleListBox";
-            this.SpieleListBox.Size = new System.Drawing.Size(109, 64);
+            this.SpieleListBox.Size = new System.Drawing.Size(396, 604);
             this.SpieleListBox.TabIndex = 0;
             // 
             // GameLauncherForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(427, 654);
             this.Controls.Add(this.SpieleListBox);
             this.Name = "GameLauncherForm";
-            this.Text = "Form1";
+            this.Text = "Robin´s Launcher";
             this.ResumeLayout(false);
 
         }

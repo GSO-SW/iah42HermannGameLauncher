@@ -9,10 +9,10 @@ namespace GameLauncher
 {
     internal class Spiel
     {
-        string SpieleTitel { get; set; }
+        string SpieleTitel;
         DateTime Installationsdatum { get; set; }
         DateTime ZuetztGespielt { get; set; }
-        string Instalationspfad { get; set; }
+        string Instalationspfad;
         string Kategorie { get; set; }
         string Publisher { get; set; }
         int USKEinstufung { get; set; }
@@ -22,10 +22,30 @@ namespace GameLauncher
             SpieleTitel = titel;
             Installationsdatum = instalationsdatum;
             ZuetztGespielt = new DateTime(2000, 01, 01);
-            Instalationspfad = instalationsPfad;
+
+
+            if (File.Exists(instalationsPfad))
+            {
+                Instalationspfad = instalationsPfad; 
+            }
+            else
+            {
+                throw new FileNotFoundException();
+            }
+
             Kategorie = kategorie;
             Publisher = publisher;
             USKEinstufung = USK;
+        }
+
+        public string GetSpieleTitel
+        {
+            get { return SpieleTitel; }
+        }
+
+        public string GetInstalationspfad
+        {
+            get { return Instalationspfad; }
         }
     }
 }
