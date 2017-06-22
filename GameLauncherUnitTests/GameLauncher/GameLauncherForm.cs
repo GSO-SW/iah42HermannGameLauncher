@@ -27,8 +27,31 @@ namespace GameLauncher
         public GameLauncherForm()
         {
             InitializeComponent();
+            SpieleListBox.DisplayMember = "GetSpieleTitel";
         }
 
+        private void SpielHinzufügenButton_Click(object sender, EventArgs e)
+        {
+            SpielHinzufügenForm newGameDialog = new GameLauncher.SpielHinzufügenForm();
 
+            this.Hide();
+
+            newGameDialog.ShowDialog();
+            Spiel s = newGameDialog.ReturnValue;
+            
+            this.Show();
+
+            SpieleListBox.Items.Add(s);
+        }
+
+        private void SpieleListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DetailDialog detDialog = new DetailDialog(SpieleListBox.SelectedItem as Spiel);
+            detDialog.ShowDialog();
+
+            this.Show();
+        }
     }
 }

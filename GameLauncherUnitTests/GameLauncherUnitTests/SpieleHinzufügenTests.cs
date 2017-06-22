@@ -15,8 +15,9 @@ namespace GameLauncherUnitTests
         {
             List<Spiel> gameL = new List<Spiel>();
 
-            gameL = Controller.AddGame("Darksouls", DateTime.Now, "C:/Games/Dark Souls III/Game/DarkSoulsIII.exe", "RPG", "From Software", 16, gameL);
-            
+            Spiel s = Controller.AddGame("Darksouls", DateTime.Now, "C:/Games/Dark Souls III/Game/DarkSoulsIII.exe", "RPG", "From Software", 16);
+            gameL.Add(s);
+
             Assert.AreEqual(1, gameL.Count);
         }
 
@@ -26,9 +27,8 @@ namespace GameLauncherUnitTests
         {
             List<Spiel> gameL = new List<Spiel>();
 
-            gameL = Controller.AddGame("Darksouls", DateTime.Now, @"C:\Games\Dark Souls III\Game\DaSoulsIII.exe", "RPG", "From Software", 16, gameL);
-
-            Assert.AreEqual(0, gameL.Count);
+            Spiel s = Controller.AddGame("Darksouls", DateTime.Now, @"C:\Games\Dark Souls III\Game\DaSoulsIII.exe", "RPG", "From Software", 16);
+            gameL.Add(s);
         }
 
 

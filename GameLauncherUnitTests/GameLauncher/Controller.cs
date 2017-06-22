@@ -12,7 +12,7 @@ namespace GameLauncher
     {
 
 
-        internal static List<Spiel> AddGame(string titel, DateTime instaldate, string pfad, string kat, string pub, int USK, List<Spiel> gameList)
+        internal static Spiel AddGame(string titel, DateTime instaldate, string pfad, string kat, string pub, int USK)
         {
             bool titelOk = StringArgumentsNotEmpty(titel);
 
@@ -27,8 +27,8 @@ namespace GameLauncher
             if (titelOk && pfadOk && katOk && pfadOk && uskOk)
             {
                 Spiel s = new Spiel(titel, instaldate, pfad, kat, pub, USK);
-                gameList.Add(s);
-                return gameList;
+
+                return s;
             }
             else
             {
@@ -74,7 +74,7 @@ namespace GameLauncher
         {
             if (!(titel != string.Empty))
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("Kein Feld darf leer bleiben!");
             }
             else
             {

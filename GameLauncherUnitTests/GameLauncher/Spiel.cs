@@ -47,5 +47,30 @@ namespace GameLauncher
         {
             get { return Instalationspfad; }
         }
+
+        public DateTime GetInstalationsdatum
+        {
+            get { return Installationsdatum; }
+        }
+
+        public DateTime GetZuletztGespielt
+        {
+            get { return ZuetztGespielt; }
+        }
+
+        public string GetKategorie
+        {
+            get { return Kategorie; }
+        }
+        public string GetPublisher
+        {
+            get { return Publisher; }
+        }
+
+        public int GetUSKEinstufung
+        {
+            get { return USKEinstufung; }
+        }
+
     }
 }
