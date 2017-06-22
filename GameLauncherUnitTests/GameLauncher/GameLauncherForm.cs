@@ -28,6 +28,7 @@ namespace GameLauncher
         {
             InitializeComponent();
             SpieleListBox.DisplayMember = "GetSpieleTitel";
+            SpieleListBox.Sorted = true;
         }
 
         private void SpielHinzufügenButton_Click(object sender, EventArgs e)
@@ -42,6 +43,8 @@ namespace GameLauncher
             this.Show();
 
             SpieleListBox.Items.Add(s);
+
+            
         }
 
         private void SpieleListBox_SelectedIndexChanged(object sender, EventArgs e)
